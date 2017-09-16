@@ -33,7 +33,7 @@ while(~solutionFound)
         w(iter + 1,:) = w(iter,:) + a * input(i,:) * error(iter);
         iter = iter + 1;
     end
-    errorSumSquared(epoch) = sumsqr(error);
+    errorSumSquared(epoch) = sumsqr(error((epoch-1)*4+1:epoch*4));
     
     disp(epoch + " : " + output(1) + ", " + output(2) + ", " + output(3) + ", " + output(4));
     
@@ -42,6 +42,7 @@ while(~solutionFound)
     if output == wantedOutput | iter > 10000
         solutionFound = true;
     end
+    pause
 end
 
 plot(errorSumSquared);
