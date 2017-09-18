@@ -1,4 +1,4 @@
-function [ weightMatrix ] = generateWeightMatrix( nodeCounts )
+function weightMatrix = generateWeightMatrix( nodeCounts )
 %GENERATEWEIGHTMATRIX Summary of this function goes here
 %   Detailed explanation goes here
     layerCount = numel(nodeCounts) - 1;
