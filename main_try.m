@@ -5,7 +5,8 @@ theta = -1;
 amount = 1000;
 
 % Training input part
-in = dlmread(fullfile('C:','Users','Thomas van der Pas','Documents','TU Delft', 'Vakken', 'Computational Intelligence','CI-37','data','features.txt'));
+%in = dlmread(fullfile('C:','Users','Thomas van der Pas','Documents','TU Delft', 'Vakken', 'Computational Intelligence','CI-37','data','features.txt'));
+in = dlmread("data/features.txt");
 input = in(1:amount,:);
 
 % unrandomize input:
@@ -17,7 +18,8 @@ input = in(1:amount,:);
 n1 = size(input);
 
 
-wantedOut = dlmread(fullfile('C:','Users','Thomas van der Pas','Documents','TU Delft', 'Vakken', 'Computational Intelligence','CI-37','data','targets.txt'));
+%wantedOut = dlmread(fullfile('C:','Users','Thomas van der Pas','Documents','TU Delft', 'Vakken', 'Computational Intelligence','CI-37','data','targets.txt'));
+wantedOut = dlmread("data/targets.txt");
 wantedOutput = wantedOut(1:amount,:);
 
 
