@@ -6,9 +6,9 @@ function weightMatrix = generateWeightMatrix( nodeCounts )
     weightMatrix = zeros();
     
     for i = 1:layerCount
-        n = nodeCounts(i);
         m = nodeCounts(i + 1);
-        weightMatrix(1:n,1:m,i) = randomWeights(n, m);
+        n = nodeCounts(i);
+        weightMatrix(1:m,1:n,i) = randomWeights(m, n);
     end
 end
 

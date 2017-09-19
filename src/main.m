@@ -7,7 +7,7 @@ inputFile = dlmread("../data/features.txt");
 desiredOutputs = dlmread("../data/targets.txt");
 outputs = zeros();
 
-nodeCounts = [10, 10, 7];
+nodeCounts = [10, 9, 11, 7];
 layerCount = numel(nodeCounts);
 
 % Generate a matrix with random weights for all the nodes in the network
@@ -21,8 +21,8 @@ for inputNum = 1:size(inputFile,1)
         % Iterate over every node in a layer
         for node = 1:nodeCounts(layer)
             % Truncate the inputs and outputs
-            currInputs = inputs(1:nodeCounts(layer));
-            currWeights = weightMatrix(node,1:nodeCounts(layer),layer - 1);
+            currInputs = inputs(1:nodeCounts(layer - 1));
+            currWeights = weightMatrix(node, 1:nodeCounts(layer - 1), layer - 1);
             outputs(node) = perceptron(currInputs, currWeights);
         end
         inputs = outputs;
