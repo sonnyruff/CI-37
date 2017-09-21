@@ -1,6 +1,4 @@
-function f = perceptron( x, w )
-    threshold = 1;
-
+function f = perceptron( x, w, theta )
     sum = dot(x, w);
-    f = stepFunc(sum - threshold);
+    f = sigmoidFunc(sum - theta);
 end
