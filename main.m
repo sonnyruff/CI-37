@@ -3,9 +3,9 @@ close all
 
 % Setting variables
 learningSpeed = 0.01;
-neuronsPerLayer = 9;
+neuronsPerLayer = 21;
 iterations = 20;
-wantedMeanError = 0.3;
+wantedMeanError = 0.007;
 
 % Reading in files
 inputMatrices = dlmread("data/features.txt");
@@ -93,7 +93,7 @@ while(~goal)
     end
 	meanError(train) = sum(errorSumSquared(:,train))/size(trainingOutput,1);
     plot(meanError(1:train));
-    xlim([0 15]);
+    xlim([1 max(20,train)]);
     ylim([0 max(meanError)]);
     pause(0.0001);
     
@@ -106,4 +106,5 @@ while(~goal)
     
 end
 
-print(['The goal is reached after ' , num2str(train-1), ' iterations.']);
+a = ['The goal is reached after ' , num2str(train-1), ' iterations.'];
+fprintf(a);
